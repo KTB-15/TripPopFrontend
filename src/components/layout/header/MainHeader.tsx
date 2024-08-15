@@ -1,4 +1,4 @@
-import NavSection from '@/components/layout/header/nav/NavSection';
+import { NavSection } from '@/components/layout/header/nav';
 
 const MainHeader = () => {
   return (
