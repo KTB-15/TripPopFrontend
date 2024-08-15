@@ -6,3 +6,4 @@ export { default as Enter } from './Enter';
 export { default as Favourite } from './Favourite';
 export { default as Option } from './Option';
 export { default as Star } from './Star';
+export { default as IconButton } from './IconButton';
