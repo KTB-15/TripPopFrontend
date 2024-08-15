@@ -1,4 +1,4 @@
-import MyPageNavSection from '@/components/layout/header/nav/UserInfoNavSection';
+import { MyPageNavSection } from '@/components/layout/header/nav';
 
 const MyPageHeader = () => {
   return (
