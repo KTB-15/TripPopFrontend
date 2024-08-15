@@ -1,6 +1,8 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainPage from '@/pages/MainPage';
-import MyPage from '@/pages/userInfo/UserInfoPage';
+import UserFavouritePage from '@/pages/userInfo/UserFavouritePage';
+import UserReviewPage from '@/pages/userInfo/UserReviewPage';
+import UserHistoryPage from '@/pages/userInfo/UserHistoryPage';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +11,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/mypage/favourite',
-    element: <MyPage></MyPage>,
+    element: <UserFavouritePage></UserFavouritePage>,
+  },
+  {
+    path: '/mypage/review',
+    element: <UserReviewPage></UserReviewPage>,
+  },
+  {
+    path: '/mypage/history',
+    element: <UserHistoryPage></UserHistoryPage>,
   },
 ]);
 

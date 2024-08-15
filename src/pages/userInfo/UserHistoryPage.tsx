@@ -1,6 +1,6 @@
 import MyPageHeader from '@/components/layout/header/MyPageHeader';
 
-const MyPage = () => {
+const UserHistoryPage = () => {
   return (
     <>
       <MyPageHeader></MyPageHeader>
@@ -8,4 +8,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default UserHistoryPage;
