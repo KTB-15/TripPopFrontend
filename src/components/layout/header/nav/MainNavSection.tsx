@@ -1,0 +1,23 @@
+import { useLocation } from 'react-router-dom';
+
+const MainNavSection = () => {
+  const location = useLocation();
+  // 현재 페이지에 해당되는 텍스트인지 확인하는 함수
+  const getTextColor = (path: string) => {
+    return location.pathname === path ? 'text-blue-light' : 'text-black';
+  };
+  return (
+    <>
+      <nav className="flex text-lg font-bold px-4">
+        <a href="/" className={`px-2 ${getTextColor('/')}`}>
+          홈
+        </a>
+        <a href="/mypage/favourite" className={`px-2 ${getTextColor('/mypage/favourite')}`}>
+          마이페이지
+        </a>
+      </nav>
+    </>
+  );
+};
+
+export default MainNavSection;
