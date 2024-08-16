@@ -11,14 +11,18 @@ const PlaceCard = () => {
     navigate(`detail/${id}`);
   };
   return (
-    <div className="flex w-full min-w-[10%] max-w-[25rem] flex-col overflow-hidden rounded-lg bg-white drop-shadow-md">
-      <img className="object-cover w-full h-60" src="image-url" alt="Travel Destination" />
+    <div className="group flex w-[25rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white drop-shadow-md sm:w-full">
+      <img
+        className="object-fill w-full hover:animate-zoom-in h-60"
+        src="./src/assets/react.svg"
+        alt="Travel Destination"
+      />
       <div className="px-1 py-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold peer-hover:text-blue-light">전주한옥마을버스정류장</h2>
-            <IconButton onClick={() => goToDetail('TODO')}>
-              <EnterSVG />
+          <div onClick={() => goToDetail('TODO')} className="flex items-center justify-between py-2 cursor-pointer">
+            <h2 className="text-base font-semibold group-hover:text-blue-light sm:text-xl">전주한옥마을 버스정류장</h2>
+            <IconButton>
+              <EnterSVG className={'stroke-black group-hover:stroke-blue-light'} />
             </IconButton>
           </div>
           <div className="flex space-x-2">
