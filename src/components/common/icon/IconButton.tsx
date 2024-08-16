@@ -1,6 +1,6 @@
 interface IconButtonProps {
   children: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const IconButton = ({ children, onClick }: IconButtonProps) => {
