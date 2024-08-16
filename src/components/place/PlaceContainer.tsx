@@ -1,7 +1,11 @@
 import { PropsWithChildren } from 'react';
 
 const PlaceContainer: React.FC<PropsWithChildren<{}>> = ({ children }) => {
-  return <div className="grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">{children}</div>;
+  return (
+    <div className="grid grid-cols-1 justify-items-center gap-3 bg-green-400 px-[4rem] sm:grid-cols-2 lg:grid-cols-5">
+      {children}
+    </div>
+  );
 };
 
 export default PlaceContainer;
