@@ -1,4 +1,4 @@
-import NavLink from '@/components/layout/header/nav/NavLink';
+import NavLink from '@/components/layout/header/navigation/NavLink';
 
 const MyPageNavSection = () => {
   return (

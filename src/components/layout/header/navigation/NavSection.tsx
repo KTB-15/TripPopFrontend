@@ -1,5 +1,5 @@
-import MainNavSection from '@/components/layout/header/nav/MainNavSection';
-import MyPageNavSection from '@/components/layout/header/nav/UserInfoNavSection';
+import MainNavSection from '@/components/layout/header/navigation/MainNavSection';
+import MyPageNavSection from '@/components/layout/header/navigation/UserInfoNavSection';
 import { useLocation } from 'react-router-dom';
 
 const NavSection = () => {
