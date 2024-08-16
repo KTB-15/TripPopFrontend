@@ -18,6 +18,9 @@ export default {
           '100%': { transform: 'scale(1.1)' },
         },
       },
+      fontFamily: {
+        goorm: ['goorm-sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],
