@@ -10,7 +10,7 @@ const CardActionSection = () => {
     navigate(`detail/${id}`);
   };
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between px-1">
       <div onClick={() => goToDetail('TODO')} className="flex items-center justify-between py-2 cursor-pointer">
         <h2 className="text-base font-semibold group-hover:text-blue-light sm:text-xl">전주한옥마을 버스정류장</h2>
         <IconButton>
@@ -48,15 +48,13 @@ const CardBody = () => {
 
 const PlaceCard = () => {
   return (
-    <div className="group flex w-[25rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white drop-shadow-md sm:w-full">
-      <img
-        className="object-fill w-full hover:animate-zoom-in h-60"
-        src="./src/assets/react.svg"
-        alt="Travel Destination"
-      />
+    <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
+      <img className="object-fill w-full hover:animate-zoom-in h-60" src={url} alt="Travel Destination" />
       <CardBody />
     </div>
   );
 };
 
 export default PlaceCard;
+
+const url = 'https://cdn.pixabay.com/photo/2022/10/01/01/53/gyeongbokgung-palace-7490464_640.jpg';
