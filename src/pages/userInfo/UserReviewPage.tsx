@@ -1,11 +1,5 @@
-import MyPageHeader from '@/components/layout/header/MyPageHeader';
-
 const UserReviewPage = () => {
-  return (
-    <>
-      <MyPageHeader></MyPageHeader>
-    </>
-  );
+  return <></>;
 };
 
 export default UserReviewPage;
