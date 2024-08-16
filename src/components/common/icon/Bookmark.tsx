@@ -6,7 +6,7 @@ const BookmarkSVG = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-6 stroke-blue-dark hover:fill-blue-dark">
+      className="size-7 stroke-blue-dark hover:fill-blue-dark">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
