@@ -9,6 +9,15 @@ export default {
         red: '#f23030',
         yellow: '#fcd34d',
       },
+      animation: {
+        'zoom-in': 'zoomIn 0.3s ease-in-out forwards',
+      },
+      keyframes: {
+        zoomIn: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
+        },
+      },
     },
   },
   plugins: [],
