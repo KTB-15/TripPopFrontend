@@ -1,7 +1,5 @@
-import { IconButton } from '@/components/common/icon';
-import BookmarkSVG from '@/components/common/icon/Bookmark';
-import EnterSVG from '@/components/common/icon/Enter';
-import FavouriteSVG from '@/components/common/icon/Favourite';
+import { Hashtag } from '@/components/common';
+import { IconButton, Bookmark, Enter, Favourite } from '@/components/common/icon';
 import { useNavigate } from 'react-router-dom';
 
 const CardActionSection = () => {
@@ -14,15 +12,15 @@ const CardActionSection = () => {
       <div onClick={() => goToDetail('TODO')} className="flex items-center justify-between py-2 cursor-pointer">
         <h2 className="text-base font-semibold group-hover:text-blue-light sm:text-xl">전주한옥마을 버스정류장</h2>
         <IconButton>
-          <EnterSVG className={'stroke-black group-hover:stroke-blue-light'} />
+          <Enter className={'stroke-black group-hover:stroke-blue-light'} />
         </IconButton>
       </div>
       <div className="flex space-x-2">
         <IconButton onClick={() => goToDetail('TODO')}>
-          <FavouriteSVG />
+          <Favourite />
         </IconButton>
         <IconButton onClick={() => goToDetail('TODO')}>
-          <BookmarkSVG />
+          <Bookmark />
         </IconButton>
       </div>
     </div>
@@ -32,7 +30,7 @@ const CardActionSection = () => {
 const CardFooter = () => {
   return (
     <div className="mt-2">
-      <span className="px-2 py-1 text-sm border rounded-lg border-blue-light text-blue-light">#경주</span>
+      <Hashtag text="전주" />
     </div>
   );
 };
@@ -49,7 +47,9 @@ const CardBody = () => {
 const PlaceCard = () => {
   return (
     <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
-      <img className="object-fill w-full hover:animate-zoom-in h-60" src={url} alt="Travel Destination" />
+      <div className="overflow-hidden">
+        <img className="object-fill w-full hover:animate-zoom-in h-60" src={url} alt="Travel Destination" />
+      </div>
       <CardBody />
     </div>
   );
