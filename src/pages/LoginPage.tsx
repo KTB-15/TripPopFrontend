@@ -14,7 +14,7 @@ const LoginPage = () => {
                 <section className="relative h-1/2">
                     <section
                         className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url(/tourImage.png)' }}
+                        style={{ backgroundImage: 'url(/tour_image.png)' }}
                     />
                 </section>
             </section>
