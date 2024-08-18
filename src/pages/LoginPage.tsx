@@ -22,7 +22,6 @@ const LoginPage = () => {
             {/* 오른쪽 60% 영역 */}
             <div className="w-3/5 flex items-center justify-center bg-transparent">
                 <div className="bg-white p-10 rounded-lg shadow-lg max-w-md w-full">
-                    <h2 className="text-4xl font-bold text-center text-blue-500 mb-8">로그인</h2>
                     <form className="space-y-6">
                         <div className="flex items-center space-x-4">
                             <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
