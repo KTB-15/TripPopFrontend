@@ -22,7 +22,7 @@ const LoginPage = () => {
             {/* 오른쪽 60% 영역 */}
             <section className="w-3/5 flex items-center justify-center bg-transparent">
                 <section className="bg-white p-10 rounded-lg shadow-lg max-w-md w-full">
-                    <form className="space-y-6">
+                    <form className="space-y-4">
                         <section className="flex items-center space-x-4">
                             <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
                             <input 
