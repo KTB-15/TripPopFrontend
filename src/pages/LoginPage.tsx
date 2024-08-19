@@ -42,11 +42,13 @@ const LoginPage = () => {
                             />
                         </section>
 
-                        {/* 아이디 찾기 | 비밀번호 찾기*/}
+                        {/* 아이디 찾기 | 비밀번호 찾기 | 회원가입 링크 */}
                         <section className="flex justify-end text-sm text-gray-500">
                             <a href="#" className="hover:underline">아이디 찾기</a>
                             <span className="px-2">|</span>
                             <a href="#" className="hover:underline">비밀번호 찾기</a>
+                            <span className="px-2">|</span>
+                            <a href="#" className="hover:underline">회원가입</a>
                         </section>
 
                         <button 
