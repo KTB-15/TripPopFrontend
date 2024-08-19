@@ -65,6 +65,12 @@ const LoginPage = () => {
                                 alt="Google Login" 
                                 className="h-12 cursor-pointer" 
                             />
+
+                            <img 
+                                src="/naver_login_logo.png" 
+                                alt="Naver Login" 
+                                className="h-12 cursor-pointer" 
+                            />
                         </section>
                     </form>
                 </section>
