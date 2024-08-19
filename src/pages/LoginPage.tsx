@@ -52,6 +52,14 @@ const LoginPage = () => {
                             <h5 className="text-gray-400 px-4">소셜 계정으로 로그인</h5>
                             <section className="flex-grow border-t border-gray-300"></section>
                         </section>
+
+                        <section className="flex justify-between mt-4 px-4">
+                            <img 
+                                src="/kakao_login_logo.png" 
+                                alt="Kakao Login" 
+                                className="h-12 cursor-pointer" 
+                            />
+                        </section>
                     </form>
                 </section>
             </section>
