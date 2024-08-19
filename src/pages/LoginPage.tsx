@@ -1,10 +1,18 @@
 // src/pages/LoginPage.tsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/stores/RegisterPageStore';
 import RegisterMemberPage from '@/pages/RegisterMemberPage';
 
 const LoginPage = () => {
+    const navigate = useNavigate(); 
     const { isModalOpen, openModal, closeModal } = useStore();
+
+    const handleLogin = (event: React.FormEvent) => {
+        event.preventDefault();
+        // 로그인 성공 시 '/' 페이지로 리다이렉션
+        navigate('/');
+    };
 
     return (
         <main className="min-h-screen flex bg-gray-100">
@@ -29,7 +37,7 @@ const LoginPage = () => {
             {/* 오른쪽 60% 영역 */}
             <section className="w-3/5 flex items-center justify-center bg-transparent">
                 <section className="bg-white p-10 rounded-lg shadow-lg max-w-md w-full">
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleLogin}>
                         <section className="flex items-center space-x-4">
                             <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
                             <input 
