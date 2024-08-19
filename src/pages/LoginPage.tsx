@@ -46,6 +46,12 @@ const LoginPage = () => {
                             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 transition-colors duration-200">
                             로그인
                         </button>
+
+                        <section className="flex items-center my-6 px-4">
+                            <section className="flex-grow border-t border-gray-300"></section>
+                            <h5 className="text-gray-400 px-4">소셜 계정으로 로그인</h5>
+                            <section className="flex-grow border-t border-gray-300"></section>
+                        </section>
                     </form>
                 </section>
             </section>
