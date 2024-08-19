@@ -1,4 +1,17 @@
+import React, { useState } from 'react';
+import RegisterMemberPage from './RegisterMemberPage';
+
 const LoginPage = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <main className="min-h-screen flex bg-gray-100">
             {/* 왼쪽 40% 영역 */}
@@ -26,7 +39,7 @@ const LoginPage = () => {
                         <section className="flex items-center space-x-4">
                             <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
                             <input 
-                                type="id" 
+                                type="text" 
                                 id="id" 
                                 className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                 placeholder=""
@@ -43,12 +56,12 @@ const LoginPage = () => {
                         </section>
 
                         {/* 아이디 찾기 | 비밀번호 찾기 | 회원가입 링크 */}
-                        <section className="flex justify-end text-sm text-gray-500">
+                        <section className="flex justify-end text-sm text-gray-500 mt-0 mb-0">
                             <a href="#" className="hover:underline">아이디 찾기</a>
                             <span className="px-2">|</span>
                             <a href="#" className="hover:underline">비밀번호 찾기</a>
                             <span className="px-2">|</span>
-                            <a href="#" className="hover:underline">회원가입</a>
+                            <a href="#" className="hover:underline" onClick={openModal}>회원가입</a>
                         </section>
 
                         <button 
@@ -85,6 +98,9 @@ const LoginPage = () => {
                     </form>
                 </section>
             </section>
+
+            {/* 회원가입 모달 */}
+            <RegisterMemberPage isModalOpen={isModalOpen} closeModal={closeModal} />
         </main>
     );
 };
