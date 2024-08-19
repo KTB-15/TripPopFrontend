@@ -41,6 +41,14 @@ const LoginPage = () => {
                                 placeholder=""
                             />
                         </section>
+
+                        {/* 아이디 찾기 | 비밀번호 찾기*/}
+                        <section className="flex justify-end text-sm text-gray-500">
+                            <a href="#" className="hover:underline">아이디 찾기</a>
+                            <span className="px-2">|</span>
+                            <a href="#" className="hover:underline">비밀번호 찾기</a>
+                        </section>
+
                         <button 
                             type="submit" 
                             className="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 transition-colors duration-200">
