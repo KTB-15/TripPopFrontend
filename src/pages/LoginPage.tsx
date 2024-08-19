@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStore } from '@/stores/RegisterPageStore'; // Zustand 스토어 임포트
-import RegisterMemberPage from './RegisterMemberPage';
+import RegisterMemberPage from '@/pages/RegisterMemberPage';
 
 const LoginPage = () => {
     // Zustand 스토어에서 상태와 메서드 가져오기
