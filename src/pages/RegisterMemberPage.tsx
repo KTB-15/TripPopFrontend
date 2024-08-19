@@ -1,13 +1,10 @@
-import CloseSVG from '@/components/common/icon/Close';
 import React from 'react';
+import CloseSVG from '@/components/common/icon/Close';
+import { useStore } from '@/stores/RegisterPageStore'; // Zustand 스토어 임포트
 
-// Props 타입 정의
-type RegisterMemberPageProps = {
-    isModalOpen: boolean;
-    closeModal: () => void;
-};
+const RegisterMemberPage: React.FC = () => {
+    const { isModalOpen, closeModal } = useStore();
 
-const RegisterMemberPage: React.FC<RegisterMemberPageProps> = ({ isModalOpen, closeModal }) => {
     if (!isModalOpen) return null;
 
     return (
@@ -29,7 +26,7 @@ const RegisterMemberPage: React.FC<RegisterMemberPageProps> = ({ isModalOpen, cl
                         <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
                         <input
                             type="text"
-                            id="id" 
+                            id="id"
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />
@@ -48,9 +45,9 @@ const RegisterMemberPage: React.FC<RegisterMemberPageProps> = ({ isModalOpen, cl
                     {/* 비밀번호 */}
                     <section className="flex items-center space-x-4">
                         <label htmlFor="password" className="block text-sm font-medium text-gray-700 w-1/3">비밀번호</label>
-                        <input 
-                            type="password" 
-                            id="password" 
+                        <input
+                            type="password"
+                            id="password"
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />
@@ -59,9 +56,9 @@ const RegisterMemberPage: React.FC<RegisterMemberPageProps> = ({ isModalOpen, cl
                     {/* 비밀번호 재입력 */}
                     <section className="flex items-center space-x-4">
                         <label htmlFor="password-confirm" className="block text-sm font-medium text-gray-700 w-1/3">비밀번호 재입력</label>
-                        <input 
-                            type="password" 
-                            id="password-confirm" 
+                        <input
+                            type="password"
+                            id="password-confirm"
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />

@@ -1,9 +1,9 @@
+// src/pages/LoginPage.tsx
 import React from 'react';
-import { useStore } from '@/stores/RegisterPageStore'; // Zustand 스토어 임포트
+import { useStore } from '@/stores/RegisterPageStore';
 import RegisterMemberPage from '@/pages/RegisterMemberPage';
 
 const LoginPage = () => {
-    // Zustand 스토어에서 상태와 메서드 가져오기
     const { isModalOpen, openModal, closeModal } = useStore();
 
     return (
@@ -94,7 +94,7 @@ const LoginPage = () => {
             </section>
 
             {/* 회원가입 모달 */}
-            <RegisterMemberPage isModalOpen={isModalOpen} closeModal={closeModal} />
+            <RegisterMemberPage />
         </main>
     );
 };

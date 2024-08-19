@@ -1,13 +1,12 @@
-// src/store.ts
 import create from 'zustand';
 
-interface StoreState {
+interface RegisterPageState {
     isModalOpen: boolean;
     openModal: () => void;
     closeModal: () => void;
 }
 
-export const useStore = create<StoreState>((set) => ({
+export const useStore = create<RegisterPageState>((set) => ({
     isModalOpen: false,
     openModal: () => set({ isModalOpen: true }),
     closeModal: () => set({ isModalOpen: false }),
