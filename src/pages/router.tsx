@@ -4,6 +4,7 @@ import UserReviewPage from '@/pages/userInfo/UserReviewPage';
 import UserHistoryPage from '@/pages/userInfo/UserHistoryPage';
 import RootPage from '@/pages/RootPage';
 import MainPage from '@/pages/MainPage';
+import LoginPage from '@/pages/LoginPage';
 
 const myPageRoutes: RouteObject[] = [
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       ...myPageRoutes,
     ],
   },
+  {
+    path: '/login',
+    element: <LoginPage></LoginPage>
+  }
 ]);
 
 export default router;
