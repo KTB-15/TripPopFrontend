@@ -1,6 +1,6 @@
 import React from 'react';
 import CloseSVG from '@/components/common/icon/Close';
-import { useStore } from '@/stores/RegisterPageStore'; // Zustand 스토어 임포트
+import { useStore } from '@/stores/RegisterPageStore';
 
 const RegisterMemberPage: React.FC = () => {
     const { isModalOpen, closeModal } = useStore();
