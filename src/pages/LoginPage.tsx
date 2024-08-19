@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useStore } from '@/stores/RegisterPageStore'; // Zustand 스토어 임포트
 import RegisterMemberPage from './RegisterMemberPage';
 
 const LoginPage = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    // Zustand 스토어에서 상태와 메서드 가져오기
+    const { isModalOpen, openModal, closeModal } = useStore();
 
     return (
         <main className="min-h-screen flex bg-gray-100">
