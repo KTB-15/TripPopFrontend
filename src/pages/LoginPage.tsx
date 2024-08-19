@@ -59,6 +59,12 @@ const LoginPage = () => {
                                 alt="Kakao Login" 
                                 className="h-12 cursor-pointer" 
                             />
+
+                            <img 
+                                src="/google_login_logo.png" 
+                                alt="Google Login" 
+                                className="h-12 cursor-pointer" 
+                            />
                         </section>
                     </form>
                 </section>
