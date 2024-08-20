@@ -12,7 +12,7 @@ const PlaceCard = () => {
   };
   return (
     <div className="flex w-full min-w-[10%] max-w-[25rem] flex-col overflow-hidden rounded-lg bg-white drop-shadow-md">
-      <img className="object-cover w-full h-60" src="image-url" alt="Travel Destination" />
+      <img className="h-60 w-full object-cover" src="image-url" alt="Travel Destination" />
       <div className="px-1 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
@@ -31,7 +31,7 @@ const PlaceCard = () => {
           </div>
         </div>
         <div className="mt-2">
-          <span className="px-2 py-1 text-sm border rounded-lg border-blue-light text-blue-light">#경주</span>
+          <span className="rounded-lg border border-blue-light px-2 py-1 text-sm text-blue-light">#경주</span>
         </div>
       </div>
     </div>

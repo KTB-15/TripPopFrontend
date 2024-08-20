@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const MainHeader = () => {
   return (
     <>
-      <header className="flex items-center justify-between px-3 py-2 border">
+      <header className="flex items-center justify-between border px-3 py-2">
         <h1 className="text-3xl font-bold">TripPop!</h1>
         <NavSection></NavSection>
       </header>
@@ -15,7 +15,7 @@ const MainHeader = () => {
 const MyPageHeader = () => {
   return (
     <>
-      <header className="flex items-center justify-between px-3 py-2 border">
+      <header className="flex items-center justify-between border px-3 py-2">
         <h1 className="text-3xl font-bold">TripPop!</h1>
         <MyPageNavSection></MyPageNavSection>
       </header>

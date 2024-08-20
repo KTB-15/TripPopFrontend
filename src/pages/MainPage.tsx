@@ -4,7 +4,7 @@ import { PlaceCard } from '@/components/place/card';
 const MainPage = () => {
   return (
     <>
-      <div className="flex flex-col h-full justify-center">
+      <div className="flex h-full flex-col justify-center">
         <PlaceContainer>
           <PlaceCard></PlaceCard>
           <PlaceCard></PlaceCard>
