@@ -9,6 +9,21 @@ interface Area {
     subArea: string[];
 }
 
+const registerMember = async (formData: any) => {
+    const response = await fetch('http://localhost:8080/member', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+    });
+
+    if (!response.ok) {
+        throw new Error('회원가입에 실패했습니다.');
+    }
+    return response.json();
+};
+
 // 중복확인 API 함수
 const checkIdDuplicate = async (id: string) => {
     const response = await fetch(`http://localhost:8080/member/${id}`);
@@ -17,13 +32,17 @@ const checkIdDuplicate = async (id: string) => {
         throw new Error('아이디 중복 확인에 실패했습니다.');
     }
 
+    // 응답이 JSON 형식이라고 가정하고 변환
     try {
         const data = await response.json();
-        return data.exists;
+        return data.exists; // 서버에서 { exists: true } 또는 { exists: false } 형태로 반환한다고 가정
     } catch (error) {
+        // JSON 변환 실패 시
         throw new Error('응답을 JSON으로 변환하는 중 오류가 발생했습니다.');
     }
 };
+
+
 
 const RegisterMemberPage: React.FC = () => {
     const { isModalOpen, closeModal } = useStore();
@@ -43,18 +62,45 @@ const RegisterMemberPage: React.FC = () => {
 
     const [isIdChecked, setIsIdChecked] = useState<boolean | null>(null); // 중복 확인 상태
 
+    const mutation = useMutation({
+        mutationFn: registerMember,
+        onSuccess: () => {
+            alert('회원가입이 완료되었습니다.');
+            closeModal(); // 모달 닫기
+        },
+        onError: (error: any) => {
+            alert(error.message || '회원가입 중 오류가 발생했습니다.');
+        },
+    });
+
     const handleAreaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const selected = e.target.value;
         setSelectedArea(selected);
 
         const area = areas.find(a => a.name === selected);
         setSubAreas(area ? area.subArea : []);
-        setFormData({ ...formData, area: selected, subArea: '' });
+        setFormData({ ...formData, area: selected, subArea: '' }); // 선택 시 하위 지역도 리셋
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { id, value } = e.target;
         setFormData({ ...formData, [id]: value });
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault(); // 폼의 기본 동작 방지
+
+        if (formData.password !== formData.passwordConfirm) {
+            alert('비밀번호가 일치하지 않습니다.');
+            return;
+        }
+
+        if (isIdChecked === false) {
+            alert('아이디 중복 확인을 먼저 해주세요.');
+            return;
+        }
+
+        mutation.mutate(formData);
     };
 
     // 중복확인 버튼 클릭 핸들러
@@ -87,7 +133,7 @@ const RegisterMemberPage: React.FC = () => {
                 <section className="mb-5"></section>
 
                 {/* 회원가입 폼 */}
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                     {/* 아이디 */}
                     <section className="flex items-center space-x-4">
                         <label htmlFor="id" className="block text-sm font-medium text-gray-700 w-1/3">아이디</label>
@@ -220,3 +266,4 @@ const RegisterMemberPage: React.FC = () => {
 };
 
 export default RegisterMemberPage;
+
