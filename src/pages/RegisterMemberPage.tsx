@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
+import areasData from '@/data/areas.json';
+
+interface Area {
+    name: string;
+    subArea: string[];
+}
 
 const RegisterMemberPage: React.FC = () => {
     const { isModalOpen, closeModal } = useStore();
+    const [areas] = useState<Area[]>(areasData);
+    const [selectedArea, setSelectedArea] = useState<string>('');
+    const [subAreas, setSubAreas] = useState<string[]>([]);
+
+    const handleAreaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const selected = e.target.value;
+        setSelectedArea(selected);
+
+        const area = areas.find(a => a.name === selected);
+        setSubAreas(area ? area.subArea : []);
+    };
 
     if (!isModalOpen) return null;
 
@@ -93,6 +110,36 @@ const RegisterMemberPage: React.FC = () => {
                             <option value="50-59">50~59</option>
                             <option value="60-69">60~69</option>
                             <option value="70-79">70~79</option>
+                        </select>
+                    </section>
+
+                    {/* 시/도 선택 박스 */}
+                    <section className="flex items-center space-x-4">
+                        <label htmlFor="area" className="block text-sm font-medium text-gray-700 w-1/3">시/도</label>
+                        <select
+                            id="area"
+                            value={selectedArea}
+                            onChange={handleAreaChange}
+                            className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        >
+                            <option value="">시/도를 선택하세요</option>
+                            {areas.map(area => (
+                                <option key={area.name} value={area.name}>{area.name}</option>
+                            ))}
+                        </select>
+                    </section>
+
+                    {/* 구/군/구 선택 박스 */}
+                    <section className="flex items-center space-x-4">
+                        <label htmlFor="subArea" className="block text-sm font-medium text-gray-700 w-1/3">구/군/구</label>
+                        <select
+                            id="subArea"
+                            className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        >
+                            <option value="">구/군/구를 선택하세요</option>
+                            {subAreas.map(subArea => (
+                                <option key={subArea} value={subArea}>{subArea}</option>
+                            ))}
                         </select>
                     </section>
 
