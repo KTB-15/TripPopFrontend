@@ -2,17 +2,46 @@ import React, { useState } from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
 import areasData from '@/data/areas.json';
+import { useMutation } from '@tanstack/react-query';
 
 interface Area {
     name: string;
     subArea: string[];
 }
 
+// 중복확인 API 함수
+const checkIdDuplicate = async (id: string) => {
+    const response = await fetch(`http://localhost:8080/member/${id}`);
+
+    if (!response.ok) {
+        throw new Error('아이디 중복 확인에 실패했습니다.');
+    }
+
+    try {
+        const data = await response.json();
+        return data.exists;
+    } catch (error) {
+        throw new Error('응답을 JSON으로 변환하는 중 오류가 발생했습니다.');
+    }
+};
+
 const RegisterMemberPage: React.FC = () => {
     const { isModalOpen, closeModal } = useStore();
     const [areas] = useState<Area[]>(areasData);
     const [selectedArea, setSelectedArea] = useState<string>('');
     const [subAreas, setSubAreas] = useState<string[]>([]);
+    
+    const [formData, setFormData] = useState({
+        id: '',
+        password: '',
+        passwordConfirm: '',
+        gender: '',
+        ageGroup: '',
+        area: '',
+        subArea: '',
+    });
+
+    const [isIdChecked, setIsIdChecked] = useState<boolean | null>(null); // 중복 확인 상태
 
     const handleAreaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const selected = e.target.value;
@@ -20,6 +49,27 @@ const RegisterMemberPage: React.FC = () => {
 
         const area = areas.find(a => a.name === selected);
         setSubAreas(area ? area.subArea : []);
+        setFormData({ ...formData, area: selected, subArea: '' });
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { id, value } = e.target;
+        setFormData({ ...formData, [id]: value });
+    };
+
+    // 중복확인 버튼 클릭 핸들러
+    const handleCheckId = async () => {
+        try {
+            const exists = await checkIdDuplicate(formData.id);
+            setIsIdChecked(!exists); // 중복이 없는 경우 true, 중복인 경우 false
+            if (exists) {
+                alert('이미 존재하는 아이디입니다.');
+            } else {
+                alert('사용 가능한 아이디입니다.');
+            }
+        } catch (error) {
+            alert('아이디 중복 확인 중 오류가 발생했습니다.');
+        }
     };
 
     if (!isModalOpen) return null;
@@ -44,6 +94,8 @@ const RegisterMemberPage: React.FC = () => {
                         <input
                             type="text"
                             id="id"
+                            value={formData.id}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />
@@ -53,6 +105,7 @@ const RegisterMemberPage: React.FC = () => {
                     <section className="flex justify-end mt-1 mb-4">
                         <button
                             type="button"
+                            onClick={handleCheckId}
                             className="bg-blue-500 text-white py-1 px-4 rounded-md shadow hover:bg-blue-600 transition-colors duration-200"
                         >
                             중복확인
@@ -65,6 +118,8 @@ const RegisterMemberPage: React.FC = () => {
                         <input
                             type="password"
                             id="password"
+                            value={formData.password}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />
@@ -72,10 +127,12 @@ const RegisterMemberPage: React.FC = () => {
 
                     {/* 비밀번호 재입력 */}
                     <section className="flex items-center space-x-4">
-                        <label htmlFor="password-confirm" className="block text-sm font-medium text-gray-700 w-1/3">비밀번호 재입력</label>
+                        <label htmlFor="passwordConfirm" className="block text-sm font-medium text-gray-700 w-1/3">비밀번호 재입력</label>
                         <input
                             type="password"
-                            id="password-confirm"
+                            id="passwordConfirm"
+                            value={formData.passwordConfirm}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder=""
                         />
@@ -86,6 +143,8 @@ const RegisterMemberPage: React.FC = () => {
                         <label htmlFor="gender" className="block text-sm font-medium text-gray-700 w-1/3">성별</label>
                         <select
                             id="gender"
+                            value={formData.gender}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         >
                             <option value="">성별을 선택하세요</option>
@@ -96,9 +155,11 @@ const RegisterMemberPage: React.FC = () => {
 
                     {/* 연령대 선택 박스 */}
                     <section className="flex items-center space-x-4">
-                        <label htmlFor="age-group" className="block text-sm font-medium text-gray-700 w-1/3">연령대</label>
+                        <label htmlFor="ageGroup" className="block text-sm font-medium text-gray-700 w-1/3">연령대</label>
                         <select
-                            id="age-group"
+                            id="ageGroup"
+                            value={formData.ageGroup}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         >
                             <option value="">연령대를 선택하세요</option>
@@ -118,7 +179,7 @@ const RegisterMemberPage: React.FC = () => {
                         <label htmlFor="area" className="block text-sm font-medium text-gray-700 w-1/3">시/도</label>
                         <select
                             id="area"
-                            value={selectedArea}
+                            value={formData.area}
                             onChange={handleAreaChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         >
@@ -134,6 +195,8 @@ const RegisterMemberPage: React.FC = () => {
                         <label htmlFor="subArea" className="block text-sm font-medium text-gray-700 w-1/3">구/군/구</label>
                         <select
                             id="subArea"
+                            value={formData.subArea}
+                            onChange={handleInputChange}
                             className="block w-2/3 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         >
                             <option value="">구/군/구를 선택하세요</option>
