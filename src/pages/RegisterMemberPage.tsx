@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
-import areasData from '@/data/areas.json';
 import { useMutation } from '@tanstack/react-query';
-
-interface Area {
-  name: string;
-  subArea: string[];
-}
 
 const registerMember = async (formData: any) => {
   const response = await fetch('http://localhost:8080/member', {
@@ -44,9 +38,6 @@ const checkIdDuplicate = async (id: string) => {
 
 const RegisterMemberPage: React.FC = () => {
   const { isModalOpen, closeModal } = useStore();
-  const [areas] = useState<Area[]>(areasData);
-  const [selectedArea, setSelectedArea] = useState<string>('');
-  const [subAreas, setSubAreas] = useState<string[]>([]);
 
   const [formData, setFormData] = useState({
     id: '',
@@ -54,8 +45,6 @@ const RegisterMemberPage: React.FC = () => {
     passwordConfirm: '',
     gender: '',
     ageGroup: '',
-    area: '',
-    subArea: '',
   });
 
   const [isIdChecked, setIsIdChecked] = useState<boolean | null>(null); // 중복 확인 상태
@@ -71,14 +60,6 @@ const RegisterMemberPage: React.FC = () => {
     },
   });
 
-  const handleAreaChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selected = e.target.value;
-    setSelectedArea(selected);
-
-    const area = areas.find((a) => a.name === selected);
-    setSubAreas(area ? area.subArea : []);
-    setFormData({ ...formData, area: selected, subArea: '' }); // 선택 시 하위 지역도 리셋
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
@@ -218,44 +199,6 @@ const RegisterMemberPage: React.FC = () => {
               <option value="50">50~59</option>
               <option value="60">60~69</option>
               <option value="70">70~79</option>
-            </select>
-          </section>
-
-          {/* 시/도 선택 박스 */}
-          <section className="flex items-center space-x-4">
-            <label htmlFor="area" className="block w-1/3 text-sm font-medium text-gray-700">
-              시/도
-            </label>
-            <select
-              id="area"
-              value={formData.area}
-              onChange={handleAreaChange}
-              className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
-              <option value="">시/도를 선택하세요</option>
-              {areas.map((area) => (
-                <option key={area.name} value={area.name}>
-                  {area.name}
-                </option>
-              ))}
-            </select>
-          </section>
-
-          {/* 구/군/구 선택 박스 */}
-          <section className="flex items-center space-x-4">
-            <label htmlFor="subArea" className="block w-1/3 text-sm font-medium text-gray-700">
-              구/군/구
-            </label>
-            <select
-              id="subArea"
-              value={formData.subArea}
-              onChange={handleInputChange}
-              className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
-              <option value="">구/군/구를 선택하세요</option>
-              {subAreas.map((subArea) => (
-                <option key={subArea} value={subArea}>
-                  {subArea}
-                </option>
-              ))}
             </select>
           </section>
 
