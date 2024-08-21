@@ -4,7 +4,7 @@ import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
 
 const registerMember = async (formData: any) => {
-  const response = await fetch('http://localhost:8080/member', {
+  const response = await fetch('http://localhost:8080/member/join', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -22,7 +22,7 @@ const registerMember = async (formData: any) => {
 
 // 중복확인 API 함수
 const checkIdDuplicate = async (id: string) => {
-  const response = await fetch(`http://localhost:8080/member/${id}`);
+  const response = await fetch(`http://localhost:8080/member/exists/${id}`);
 
   if (!response.ok) {
     throw new Error('아이디 중복 확인에 실패했습니다.');
