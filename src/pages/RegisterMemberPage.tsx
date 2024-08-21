@@ -210,14 +210,14 @@ const RegisterMemberPage: React.FC = () => {
               onChange={handleInputChange}
               className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
               <option value="">연령대를 선택하세요</option>
-              <option value="0-9">0~9</option>
-              <option value="10-19">10~19</option>
-              <option value="20-29">20~29</option>
-              <option value="30-39">30~39</option>
-              <option value="40-49">40~49</option>
-              <option value="50-59">50~59</option>
-              <option value="60-69">60~69</option>
-              <option value="70-79">70~79</option>
+              <option value="0">0~9</option>
+              <option value="10">10~19</option>
+              <option value="20">20~29</option>
+              <option value="30">30~39</option>
+              <option value="40">40~49</option>
+              <option value="50">50~59</option>
+              <option value="60">60~69</option>
+              <option value="70">70~79</option>
             </select>
           </section>
 
