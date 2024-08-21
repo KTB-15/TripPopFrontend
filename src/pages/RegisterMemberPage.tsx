@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
@@ -15,7 +15,9 @@ const registerMember = async (formData: any) => {
   if (!response.ok) {
     throw new Error('회원가입에 실패했습니다.');
   }
-  return response.json();
+
+  const responseData = await response.text();
+  return responseData;
 };
 
 // 중복확인 API 함수
@@ -59,7 +61,6 @@ const RegisterMemberPage: React.FC = () => {
       alert(error.message || '회원가입 중 오류가 발생했습니다.');
     },
   });
-
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
