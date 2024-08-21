@@ -28,14 +28,9 @@ const checkIdDuplicate = async (id: string) => {
     throw new Error('아이디 중복 확인에 실패했습니다.');
   }
 
-  // 응답이 JSON 형식이라고 가정하고 변환
-  try {
-    const data = await response.json();
-    return data.exists; // 서버에서 { exists: true } 또는 { exists: false } 형태로 반환한다고 가정
-  } catch (error) {
-    // JSON 변환 실패 시
-    throw new Error('응답을 JSON으로 변환하는 중 오류가 발생했습니다.');
-  }
+  const res = await response.json();
+  if (res.errorMessage === null) return res.data;
+  throw new Error(res.errorMessage);
 };
 
 const RegisterMemberPage: React.FC = () => {
