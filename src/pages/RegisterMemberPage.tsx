@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
@@ -69,13 +69,29 @@ const RegisterMemberPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // 폼의 기본 동작 방지
 
+    // 입력 검증
+    if (!formData.id) {
+      alert('아이디를 입력해주세요.');
+      return;
+    }
+    if (!isIdChecked) {
+      alert('아이디 중복 확인을 먼저 해주세요.');
+      return;
+    }
     if (formData.password !== formData.passwordConfirm) {
       alert('비밀번호가 일치하지 않습니다.');
       return;
     }
-
-    if (isIdChecked === false) {
-      alert('아이디 중복 확인을 먼저 해주세요.');
+    if (!formData.password || !formData.passwordConfirm) {
+      alert('비밀번호를 입력해주세요.');
+      return;
+    }
+    if (!formData.gender) {
+      alert('성별을 선택해주세요.');
+      return;
+    }
+    if (!formData.ageGroup) {
+      alert('연령대를 선택해주세요.');
       return;
     }
 
@@ -84,6 +100,11 @@ const RegisterMemberPage: React.FC = () => {
 
   // 중복확인 버튼 클릭 핸들러
   const handleCheckId = async () => {
+    if (!formData.id) {
+      alert('아이디를 입력해주세요.');
+      return;
+    }
+
     try {
       const exists = await checkIdDuplicate(formData.id);
       setIsIdChecked(!exists); // 중복이 없는 경우 true, 중복인 경우 false
@@ -129,7 +150,9 @@ const RegisterMemberPage: React.FC = () => {
             <button
               type="button"
               onClick={handleCheckId}
-              className="rounded-md bg-blue-500 px-4 py-1 text-white shadow transition-colors duration-200 hover:bg-blue-600">
+              disabled={!formData.id}
+              className={`rounded-md px-4 py-1 shadow transition-colors duration-200 ${formData.id ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}>
               중복확인
             </button>
           </section>
