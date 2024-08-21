@@ -60,6 +60,10 @@ const RegisterMemberPage: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
+
+    if (id === 'id') {
+      setIsIdChecked(false);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
