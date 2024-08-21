@@ -5,7 +5,7 @@ import RegisterMemberPage from '@/pages/RegisterMemberPage';
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const { isModalOpen, openModal, closeModal } = useStore();
+  const { openModal } = useStore();
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
