@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
 
+// member 등록 API 함수
 const registerMember = async (formData: any) => {
   const response = await fetch(`${import.meta.env.VITE_LOCAL_URL}/member/join`, {
     method: 'POST',
@@ -34,23 +35,14 @@ const checkIdDuplicate = async (id: string) => {
 };
 
 const RegisterMemberPage: React.FC = () => {
-  const { isModalOpen, closeModal } = useStore();
-
-  const [formData, setFormData] = useState({
-    id: '',
-    password: '',
-    passwordConfirm: '',
-    gender: '',
-    ageGroup: '',
-  });
-
-  const [isIdChecked, setIsIdChecked] = useState<boolean | null>(null); // 중복 확인 상태
+  const { isModalOpen, closeModal, formData, setFormData } = useStore();
+  const [isIdChecked, setIsIdChecked] = React.useState<boolean | null>(null);
 
   const mutation = useMutation({
     mutationFn: registerMember,
     onSuccess: () => {
       alert('회원가입이 완료되었습니다.');
-      closeModal(); // 모달 닫기
+      closeModal(); // 모달 닫기 및 데이터 리셋
     },
     onError: (error: any) => {
       alert(error.message || '회원가입 중 오류가 발생했습니다.');
@@ -59,7 +51,7 @@ const RegisterMemberPage: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
-    setFormData({ ...formData, [id]: value });
+    setFormData({ [id]: value });
 
     if (id === 'id') {
       setIsIdChecked(false);
@@ -67,7 +59,7 @@ const RegisterMemberPage: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // 폼의 기본 동작 방지
+    e.preventDefault();
 
     // 입력 검증
     if (!formData.id) {
@@ -98,7 +90,6 @@ const RegisterMemberPage: React.FC = () => {
     mutation.mutate(formData);
   };
 
-  // 중복확인 버튼 클릭 핸들러
   const handleCheckId = async () => {
     if (!formData.id) {
       alert('아이디를 입력해주세요.');
@@ -107,7 +98,7 @@ const RegisterMemberPage: React.FC = () => {
 
     try {
       const exists = await checkIdDuplicate(formData.id);
-      setIsIdChecked(!exists); // 중복이 없는 경우 true, 중복인 경우 false
+      setIsIdChecked(!exists);
       if (exists) {
         alert('이미 존재하는 아이디입니다.');
       } else {
@@ -222,6 +213,8 @@ const RegisterMemberPage: React.FC = () => {
               <option value="50">50~59</option>
               <option value="60">60~69</option>
               <option value="70">70~79</option>
+              <option value="80">80~89</option>
+              <option value="90">90~99</option>
             </select>
           </section>
 
