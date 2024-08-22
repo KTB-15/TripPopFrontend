@@ -4,7 +4,7 @@ import { create } from 'zustand';
 interface RegisterPageStore {
   isModalOpen: boolean;
   formData: {
-    member_id: string;
+    memberId: string;
     password: string;
     passwordConfirm: string;
     gender: string;
@@ -19,7 +19,7 @@ interface RegisterPageStore {
 export const useStore = create<RegisterPageStore>((set) => ({
   isModalOpen: false,
   formData: {
-    member_id: '',
+    memberId: '',
     password: '',
     passwordConfirm: '',
     gender: '',
@@ -28,8 +28,8 @@ export const useStore = create<RegisterPageStore>((set) => ({
   openModal: () => set({ isModalOpen: true }),
   closeModal: () => {
     set({ isModalOpen: false });
-    set({ formData: { member_id: '', password: '', passwordConfirm: '', gender: '', ageGroup: '' } });
+    set({ formData: { memberId: '', password: '', passwordConfirm: '', gender: '', ageGroup: '' } });
   },
   setFormData: (data) => set((state) => ({ formData: { ...state.formData, ...data } })),
-  resetFormData: () => set({ formData: { member_id: '', password: '', passwordConfirm: '', gender: '', ageGroup: '' } }),
+  resetFormData: () => set({ formData: { memberId: '', password: '', passwordConfirm: '', gender: '', ageGroup: '' } }),
 }));

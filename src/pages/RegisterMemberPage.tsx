@@ -4,7 +4,7 @@ import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
 
 // member 등록 API 함수
-const registerMember = async (formData: any) => {
+const registerMember = async (formData: FormData) => {
   const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/member/join`, {
     method: 'POST',
     headers: {
@@ -53,7 +53,7 @@ const RegisterMemberPage: React.FC = () => {
     const { id, value } = e.target;
     setFormData({ [id]: value });
 
-    if (id === 'member_id') {
+    if (id === 'memberId') {
       setIsIdChecked(false);
     }
   };
@@ -62,7 +62,7 @@ const RegisterMemberPage: React.FC = () => {
     e.preventDefault();
 
     // 입력 검증
-    if (!formData.member_id) {
+    if (!formData.memberId) {
       alert('아이디를 입력해주세요.');
       return;
     }
@@ -87,17 +87,24 @@ const RegisterMemberPage: React.FC = () => {
       return;
     }
 
-    mutation.mutate(formData);
+    // FormData 객체 생성 및 데이터 추가
+    const formDataObj = new FormData();
+    formDataObj.append('memberId', formData.memberId);
+    formDataObj.append('password', formData.password);
+    formDataObj.append('gender', formData.gender);
+    formDataObj.append('ageGroup', formData.ageGroup);
+
+    mutation.mutate(formDataObj);
   };
 
   const handleCheckId = async () => {
-    if (!formData.member_id) {
+    if (!formData.memberId) {
       alert('아이디를 입력해주세요.');
       return;
     }
 
     try {
-      const exists = await checkIdDuplicate(formData.member_id);
+      const exists = await checkIdDuplicate(formData.memberId);
       setIsIdChecked(!exists);
       if (exists) {
         alert('이미 존재하는 아이디입니다.');
@@ -128,8 +135,8 @@ const RegisterMemberPage: React.FC = () => {
             </label>
             <input
               type="text"
-              id="member_id"
-              value={formData.member_id}
+              id="memberId"
+              value={formData.memberId}
               onChange={handleInputChange}
               className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
               placeholder=""
@@ -141,8 +148,8 @@ const RegisterMemberPage: React.FC = () => {
             <button
               type="button"
               onClick={handleCheckId}
-              disabled={!formData.member_id}
-              className={`rounded-md px-4 py-1 shadow transition-colors duration-200 ${formData.member_id ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              disabled={!formData.memberId}
+              className={`rounded-md px-4 py-1 shadow transition-colors duration-200 ${formData.memberId ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}>
               중복확인
             </button>
