@@ -53,7 +53,7 @@ const RegisterMemberPage: React.FC = () => {
     const { id, value } = e.target;
     setFormData({ [id]: value });
 
-    if (id === 'id') {
+    if (id === 'member_id') {
       setIsIdChecked(false);
     }
   };
@@ -62,7 +62,7 @@ const RegisterMemberPage: React.FC = () => {
     e.preventDefault();
 
     // 입력 검증
-    if (!formData.id) {
+    if (!formData.member_id) {
       alert('아이디를 입력해주세요.');
       return;
     }
@@ -91,13 +91,13 @@ const RegisterMemberPage: React.FC = () => {
   };
 
   const handleCheckId = async () => {
-    if (!formData.id) {
+    if (!formData.member_id) {
       alert('아이디를 입력해주세요.');
       return;
     }
 
     try {
-      const exists = await checkIdDuplicate(formData.id);
+      const exists = await checkIdDuplicate(formData.member_id);
       setIsIdChecked(!exists);
       if (exists) {
         alert('이미 존재하는 아이디입니다.');
@@ -128,8 +128,8 @@ const RegisterMemberPage: React.FC = () => {
             </label>
             <input
               type="text"
-              id="id"
-              value={formData.id}
+              id="member_id"
+              value={formData.member_id}
               onChange={handleInputChange}
               className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
               placeholder=""
@@ -141,8 +141,8 @@ const RegisterMemberPage: React.FC = () => {
             <button
               type="button"
               onClick={handleCheckId}
-              disabled={!formData.id}
-              className={`rounded-md px-4 py-1 shadow transition-colors duration-200 ${formData.id ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+              disabled={!formData.member_id}
+              className={`rounded-md px-4 py-1 shadow transition-colors duration-200 ${formData.member_id ? 'bg-blue-500 text-white hover:bg-blue-600' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                 }`}>
               중복확인
             </button>
