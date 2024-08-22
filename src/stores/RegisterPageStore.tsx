@@ -1,18 +1,19 @@
-// RegisterPageStore.ts
 import { create } from 'zustand';
+
+export interface FormData {
+  memberId: string;
+  password: string;
+  passwordConfirm: string;
+  gender: string;
+  ageGroup: string;
+}
 
 interface RegisterPageStore {
   isModalOpen: boolean;
-  formData: {
-    memberId: string;
-    password: string;
-    passwordConfirm: string;
-    gender: string;
-    ageGroup: string;
-  };
+  formData: FormData;
   openModal: () => void;
   closeModal: () => void;
-  setFormData: (data: Partial<RegisterPageStore['formData']>) => void;
+  setFormData: (data: Partial<FormData>) => void;
   resetFormData: () => void;
 }
 

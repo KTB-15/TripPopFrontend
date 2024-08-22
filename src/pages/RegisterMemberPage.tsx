@@ -2,6 +2,7 @@ import React from 'react';
 import CloseSVG from '@/components/common/icon/Close';
 import { useStore } from '@/stores/RegisterPageStore';
 import { useMutation } from '@tanstack/react-query';
+import { FormData } from '@/stores/RegisterPageStore';
 
 // member 등록 API 함수
 const registerMember = async (formData: FormData) => {
@@ -87,14 +88,7 @@ const RegisterMemberPage: React.FC = () => {
       return;
     }
 
-    // FormData 객체 생성 및 데이터 추가
-    const formDataObj = new FormData();
-    formDataObj.append('memberId', formData.memberId);
-    formDataObj.append('password', formData.password);
-    formDataObj.append('gender', formData.gender);
-    formDataObj.append('ageGroup', formData.ageGroup);
-
-    mutation.mutate(formDataObj);
+    mutation.mutate(formData);
   };
 
   const handleCheckId = async () => {
