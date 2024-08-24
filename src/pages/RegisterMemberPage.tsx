@@ -31,8 +31,7 @@ const checkIdDuplicate = async (id: string) => {
   }
 
   const res = await response.json();
-  if (res.errorMessage === null) return res.data;
-  throw new Error(res.errorMessage);
+  return res;
 };
 
 const RegisterMemberPage: React.FC = () => {
