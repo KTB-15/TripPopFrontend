@@ -6,3 +6,9 @@
   font-family: 'goorm-sans';
   src: url('./assets/fonts/goorm-sans-regular.woff2') format('woff2');
 }
+
+@layer components {
+  .survey-blue-btn {
+    @apply bg-blue-survey-button inline-flex justify-center rounded-lg px-5 py-2 text-white;
+  }
+}
