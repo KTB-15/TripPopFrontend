@@ -44,11 +44,19 @@ const CardBody = () => {
   );
 };
 
-const PlaceCard = () => {
+interface PlaceCardProps {
+  imgSrc?: string; // base64 형식
+}
+
+const PlaceCard = ({ imgSrc }: PlaceCardProps) => {
   return (
     <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
       <div className="overflow-hidden">
-        <img className="hover:animate-zoom-in h-60 w-full object-fill" src={url} alt="Travel Destination" />
+        <img
+          className="h-60 w-full object-fill hover:animate-zoom-in"
+          src={`data:image/jpeg;base64,${imgSrc}`}
+          alt="Travel Destination"
+        />
       </div>
       <CardBody />
     </div>
@@ -56,5 +64,3 @@ const PlaceCard = () => {
 };
 
 export default PlaceCard;
-
-const url = 'https://cdn.pixabay.com/photo/2022/10/01/01/53/gyeongbokgung-palace-7490464_640.jpg';
