@@ -31,16 +31,16 @@ const router = createBrowserRouter([
         index: true,
         element: <MainPage />,
       },
-      {
-        path: 'survey',
-        element: <SurveyPage />,
-      },
       ...myPageRoutes,
     ],
   },
   {
     path: '/login',
     element: <LoginPage></LoginPage>,
+  },
+  {
+    path: 'survey',
+    element: <SurveyPage />,
   },
 ]);
 
