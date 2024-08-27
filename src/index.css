@@ -11,4 +11,24 @@
   .survey-btn {
     @apply inline-flex justify-center rounded-lg px-5 py-2 text-white;
   }
+
+  .survey-circle {
+    @apply cursor-pointer rounded-full border-2;
+  }
+
+  .xl-circle {
+    @apply h-12 w-12 sm:h-16 sm:w-16;
+  }
+
+  .lg-circle {
+    @apply h-10 w-10 sm:h-12 sm:w-12;
+  }
+
+  .md-circle {
+    @apply h-6 w-6 sm:h-8 sm:w-8;
+  }
+
+  .sm-circle {
+    @apply h-4 w-4 sm:h-6 sm:w-6;
+  }
 }
