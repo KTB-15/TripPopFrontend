@@ -6,11 +6,14 @@ export default {
       colors: {
         'blue-light': '#5475e5',
         'blue-dark': '#1c3fb7',
-        'bg-survey': '#e1e8ff',
-        'blue-survey-button': '#5475e5',
+        'blue-survey-btn': '#5475e5',
+        survey: '#e1e8ff',
+        'survey-left': '#32a573',
+        'survey-right': '#b26a6a',
         red: '#f23030',
         yellow: '#fcd34d',
         option: '#4b5563',
+        cancel: '#ced4da',
       },
       animation: {
         'zoom-in': 'zoomIn 0.3s ease-in-out forwards',
