@@ -1,13 +1,15 @@
 import { Backspace, IconButton } from '@/components/common/icon';
 import SurveyButton from '@/components/survey/SurveyButton';
+import { useNavigate } from 'react-router-dom';
 
 interface SurveyCardHeaderProps {
   progress: number;
 }
 const SurveyCardHeader = ({ progress }: SurveyCardHeaderProps) => {
+  const navigate = useNavigate();
   return (
     <div className="flex items-start justify-between">
-      <div className="group flex cursor-pointer items-center space-x-2">
+      <div className="group flex cursor-pointer items-center space-x-2" onClick={() => navigate(-1)}>
         <IconButton>
           <Backspace className="group-hover:stroke-blue-light" />
         </IconButton>
