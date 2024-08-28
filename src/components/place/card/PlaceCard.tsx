@@ -16,10 +16,10 @@ const CardActionSection = () => {
         </IconButton>
       </div>
       <div className="flex space-x-2">
-        <IconButton onClick={() => goToDetail('TODO')}>
+        <IconButton onClick={() => console.log('FAVOURITE')}>
           <Favourite />
         </IconButton>
-        <IconButton onClick={() => goToDetail('TODO')}>
+        <IconButton onClick={() => console.log('BOOKMARK')}>
           <Bookmark />
         </IconButton>
       </div>
