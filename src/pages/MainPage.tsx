@@ -2,7 +2,7 @@ import { PlaceContainer } from '@/components/place';
 import { PlaceCard } from '@/components/place/card';
 import { SurveyStartSection } from '@/components/survey';
 import { RecommendedPlaceReq, RecommendedPlaceRes } from '@/data/type';
-import { useFetch } from '@/hooks/useFetch';
+import { useApiQuery } from '@/hooks/useApi';
 
 const SurveyContainer = () => {
   return (
@@ -19,7 +19,7 @@ const SurveyContainer = () => {
  * Place ID에 대해 이미지 가져오기
  */
 const MainPage = () => {
-  const { data, isLoading, error } = useFetch<RecommendedPlaceRes, RecommendedPlaceReq>(['recommended'], {
+  const { data, isLoading, error } = useApiQuery<RecommendedPlaceRes, RecommendedPlaceReq>(['recommended'], {
     url: '/place/recommended',
     method: 'POST',
     body: { places: [50, 51, 52, 53, 54, 56, 57, 58, 59, 60] },

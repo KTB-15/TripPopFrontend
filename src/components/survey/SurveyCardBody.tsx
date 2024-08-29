@@ -14,11 +14,8 @@ const SurveyCardBody = () => {
   ];
 
   const handleSelect = (value: number) => {
-    console.log(progress, choices, value);
     if (choices[progress - 1] === value) setChoice(0);
     else setChoice(value);
-
-    console.log(choices);
   };
 
   return (
