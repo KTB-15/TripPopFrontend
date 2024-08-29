@@ -19,11 +19,11 @@ export const QUESTIONS = [
   '괜히 이상한데 가지 말고 핫플 가야지~',
   '계획? 대충 뭐 먹고 어디 갈지만 생각하면 되지 뭐~',
   '남는 건 사진뿐📸 인생샷 건져보자~',
-];
+] as const;
 
 const useSurveyStore = create<SurveyStore>((set) => ({
   progress: 1,
-  choices: Array(QUESTIONS.length - 1).fill(0),
+  choices: Array(QUESTIONS.length - 1).fill(4),
   setChoice: (value: number) =>
     set((state) => {
       const updated = [...state.choices];
@@ -32,7 +32,7 @@ const useSurveyStore = create<SurveyStore>((set) => ({
     }),
   incProgress: () => set((state) => ({ progress: Math.min(state.progress + 1, QUESTIONS.length - 1) })),
   decProgress: () => set((state) => ({ progress: Math.max(state.progress - 1, 1) })),
-  resetProgress: () => set(() => ({ progress: 1, choices: Array(QUESTIONS.length - 1).fill(0) })),
+  resetProgress: () => set(() => ({ progress: 1, choices: Array(QUESTIONS.length - 1).fill(4) })),
 }));
 
 export default useSurveyStore;
