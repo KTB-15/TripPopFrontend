@@ -31,7 +31,7 @@ const MainPage = () => {
       <div className="flex h-full flex-col justify-center space-y-8 px-[4rem] py-8 md:py-4">
         <SurveyContainer></SurveyContainer>
         <PlaceContainer>
-          {data?.places.map((place) => <PlaceCard key={place.placeId} imgSrc={`${place.image}`}></PlaceCard>)}
+          {data?.places.map((place) => <PlaceCard key={place.placeId} place={place}></PlaceCard>)}
         </PlaceContainer>
       </div>
     </>

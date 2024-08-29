@@ -1,5 +1,6 @@
 import { Hashtag } from '@/components/common';
 import { IconButton, Bookmark, Enter, Favourite } from '@/components/common/icon';
+import { PlaceRes } from '@/data/type';
 import { useNavigate } from 'react-router-dom';
 
 const CardActionSection = () => {
@@ -44,17 +45,13 @@ const CardBody = () => {
   );
 };
 
-interface PlaceCardProps {
-  imgSrc?: string; // base64 형식
-}
-
-const PlaceCard = ({ imgSrc }: PlaceCardProps) => {
+const PlaceCard = ({ place }: { place: PlaceRes }) => {
   return (
     <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
       <div className="overflow-hidden">
         <img
           className="h-60 w-full object-fill hover:animate-zoom-in"
-          src={`data:image/jpeg;base64,${imgSrc}`}
+          src={`data:image/jpeg;base64,${place.image}`}
           alt="Travel Destination"
         />
       </div>
