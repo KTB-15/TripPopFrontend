@@ -14,7 +14,7 @@ const SurveyCardFooter = () => {
   }, {} as SurveyReq);
   const { mutate, isPending } = useApiMutate<unknown, SurveyReq>(
     {
-      url: '/member/survey/a007192',
+      url: '/member/survey/TODO',
       method: 'PATCH',
       body: surveyReq,
     },

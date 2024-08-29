@@ -19,12 +19,13 @@ const SurveyContainer = () => {
  * Place ID에 대해 이미지 가져오기
  */
 const MainPage = () => {
-  const { data, isLoading, error } = useApiQuery<RecommendedPlaceRes, RecommendedPlaceReq>(['recommended'], {
+  const { data, isPending, error } = useApiQuery<RecommendedPlaceRes, RecommendedPlaceReq>(['recommended'], {
     url: '/place/recommended',
     method: 'POST',
     body: { places: [50, 51, 52, 53, 54, 56, 57, 58, 59, 60] },
   });
-  if (isLoading) return <div>Loading...</div>;
+
+  if (isPending) return <div>Loading...</div>;
   if (error) return <div>Error occurred: {error.message}</div>;
   return (
     <>
