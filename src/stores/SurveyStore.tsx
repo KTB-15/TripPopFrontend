@@ -3,6 +3,7 @@ import { create } from 'zustand';
 interface SurveyStore {
   progress: number;
   choices: number[];
+  setChoice: (value: number) => void;
   incProgress: () => void;
   decProgress: () => void;
   resetProgress: () => void;
@@ -22,10 +23,16 @@ export const QUESTIONS = [
 
 const useSurveyStore = create<SurveyStore>((set) => ({
   progress: 1,
-  choices: Array(QUESTIONS.length).fill(0),
+  choices: Array(QUESTIONS.length - 1).fill(0),
+  setChoice: (value: number) =>
+    set((state) => {
+      const updated = [...state.choices];
+      updated[state.progress - 1] = value;
+      return { choices: updated };
+    }),
   incProgress: () => set((state) => ({ progress: Math.min(state.progress + 1, QUESTIONS.length - 1) })),
   decProgress: () => set((state) => ({ progress: Math.max(state.progress - 1, 1) })),
-  resetProgress: () => set(() => ({ progress: 1 })),
+  resetProgress: () => set(() => ({ progress: 1, choices: Array(QUESTIONS.length - 1).fill(0) })),
 }));
 
 export default useSurveyStore;
