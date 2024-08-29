@@ -20,7 +20,7 @@ const SurveyContainer = () => {
  */
 const MainPage = () => {
   const { data, isLoading, error } = useFetch<RecommendedPlaceRes, RecommendedPlaceReq>(['recommended'], {
-    url: 'http://localhost:8080/place/recommended',
+    url: '/place/recommended',
     method: 'POST',
     body: { places: [50, 51, 52, 53, 54, 56, 57, 58, 59, 60] },
   });

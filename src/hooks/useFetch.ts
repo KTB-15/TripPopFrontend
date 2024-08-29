@@ -9,8 +9,10 @@ export interface RequestProps<REQ = unknown> {
   options?: RequestInit;
 }
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const fetcher = async <RES, REQ = unknown>({ url, method, body, options }: RequestProps<REQ>): Promise<RES> => {
-  const response = await fetch(url, {
+  const response = await fetch(API_URL + url, {
     ...options,
     method,
     body: body ? JSON.stringify(body) : undefined,
