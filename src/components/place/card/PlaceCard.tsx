@@ -1,5 +1,6 @@
 import { Hashtag } from '@/components/common';
 import { IconButton, Bookmark, Enter, Favourite } from '@/components/common/icon';
+import { PlaceRes } from '@/data/type';
 import { useNavigate } from 'react-router-dom';
 
 const CardActionSection = () => {
@@ -9,17 +10,17 @@ const CardActionSection = () => {
   };
   return (
     <div className="flex items-center justify-between px-1">
-      <div onClick={() => goToDetail('TODO')} className="flex items-center justify-between py-2 cursor-pointer">
+      <div onClick={() => goToDetail('TODO')} className="flex cursor-pointer items-center justify-between py-2">
         <h2 className="text-base font-semibold group-hover:text-blue-light sm:text-xl">전주한옥마을 버스정류장</h2>
         <IconButton>
           <Enter className={'stroke-black group-hover:stroke-blue-light'} />
         </IconButton>
       </div>
       <div className="flex space-x-2">
-        <IconButton onClick={() => goToDetail('TODO')}>
+        <IconButton onClick={() => console.log('TODO: FAVOURITE')}>
           <Favourite />
         </IconButton>
-        <IconButton onClick={() => goToDetail('TODO')}>
+        <IconButton onClick={() => console.log('TODO: BOOKMARK')}>
           <Bookmark />
         </IconButton>
       </div>
@@ -44,11 +45,15 @@ const CardBody = () => {
   );
 };
 
-const PlaceCard = () => {
+const PlaceCard = ({ place }: { place: PlaceRes }) => {
   return (
     <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
       <div className="overflow-hidden">
-        <img className="object-fill w-full hover:animate-zoom-in h-60" src={url} alt="Travel Destination" />
+        <img
+          className="h-60 w-full object-fill hover:animate-zoom-in"
+          src={`data:image/jpeg;base64,${place.image}`}
+          alt="Travel Destination"
+        />
       </div>
       <CardBody />
     </div>
@@ -56,5 +61,3 @@ const PlaceCard = () => {
 };
 
 export default PlaceCard;
-
-const url = 'https://cdn.pixabay.com/photo/2022/10/01/01/53/gyeongbokgung-palace-7490464_640.jpg';

@@ -5,6 +5,7 @@ import UserHistoryPage from '@/pages/userInfo/UserHistoryPage';
 import RootPage from '@/pages/RootPage';
 import MainPage from '@/pages/MainPage';
 import LoginPage from '@/pages/LoginPage';
+import SurveyPage from '@/pages/SurveyPage';
 
 const myPageRoutes: RouteObject[] = [
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <LoginPage></LoginPage>,
+  },
+  {
+    path: 'survey',
+    element: <SurveyPage />,
   },
 ]);
 
