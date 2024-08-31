@@ -1,5 +1,6 @@
 import { Backspace, IconButton } from '@/components/common/icon';
 import SurveyButton from '@/components/survey/SurveyButton';
+import { QUESTIONS } from '@/stores/SurveyStore';
 import { useNavigate } from 'react-router-dom';
 
 interface SurveyCardHeaderProps {
@@ -17,7 +18,7 @@ const SurveyCardHeader = ({ progress }: SurveyCardHeaderProps) => {
       </div>
       <SurveyButton
         disabled={true}
-        buttonName={`${progress} / 8`}
+        buttonName={`${progress} / ${QUESTIONS.length - 1}`}
         className={'survey-btn bg-blue-survey-btn'}></SurveyButton>
       {/* 진행도 표시 */}
     </div>
