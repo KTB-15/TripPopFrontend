@@ -52,7 +52,7 @@ const PlaceCard = ({ place }: { place: PlaceRes }) => {
         <img
           className="h-60 w-full object-fill group-hover:animate-zoom-in"
           src={`data:image/jpeg;base64,${place.image}`}
-          alt="Travel Destination"
+          alt="여행 카드"
         />
       </div>
       <CardBody />

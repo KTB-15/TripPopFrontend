@@ -6,7 +6,6 @@ export default {
       colors: {
         'blue-light': '#5475e5',
         'blue-dark': '#1c3fb7',
-        'blue-survey-btn': '#5475e5',
         survey: '#e1e8ff',
         'survey-left': '#32a573',
         'survey-right': '#b26a6a',

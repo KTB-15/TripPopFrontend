@@ -1,12 +1,12 @@
 // 설문지 카드 버튼 컴포넌트
-interface SurveyButtonProps {
+interface BaseButtonProps {
   className?: string; // button css
   buttonName?: string;
   disabled?: boolean;
   onClick?: () => void;
 }
 
-const SurveyButton = (props: SurveyButtonProps) => {
+const BaseButton = (props: BaseButtonProps) => {
   return (
     <button onClick={props.onClick} className={props.className} disabled={props.disabled}>
       {props.buttonName ?? 'BUTTON'}
@@ -14,4 +14,4 @@ const SurveyButton = (props: SurveyButtonProps) => {
   );
 };
 
-export default SurveyButton;
+export default BaseButton;
