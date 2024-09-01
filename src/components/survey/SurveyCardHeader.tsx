@@ -24,7 +24,7 @@ const SurveyCardHeader = ({ progress }: SurveyCardHeaderProps) => {
       <BaseButton
         disabled={true}
         buttonName={`${progress} / ${QUESTIONS.length - 1}`}
-        className={'survey-btn bg-blue-survey-btn'}></BaseButton>
+        className={'base-btn bg-blue-survey-btn'}></BaseButton>
       {/* 진행도 표시 */}
     </div>
   );

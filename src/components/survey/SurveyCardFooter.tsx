@@ -46,18 +46,18 @@ const SurveyCardFooter = () => {
       <BaseButton
         buttonName="뒤로가기"
         onClick={handlePrev}
-        className="survey-btn bg-blue-survey-btn hover:bg-blue-dark"
+        className="base-btn bg-blue-survey-btn hover:bg-blue-dark"
       />
       <div className="flex items-center justify-center space-x-5">
         <BaseButton
           buttonName="건너뛰기"
           onClick={handleSkip}
-          className="survey-btn bg-cancel text-black hover:bg-gray-400"
+          className="base-btn bg-cancel text-black hover:bg-gray-400"
         />
         <BaseButton
           buttonName={isPending ? '등록 중...' : isLastQuestion ? '완료' : '다음'}
           onClick={handleNext}
-          className="survey-btn bg-blue-survey-btn hover:bg-blue-dark"
+          className="base-btn bg-blue-survey-btn hover:bg-blue-dark"
         />
       </div>
     </div>
