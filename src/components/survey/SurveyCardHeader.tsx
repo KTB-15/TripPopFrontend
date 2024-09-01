@@ -1,6 +1,6 @@
 import { Backspace, IconButton } from '@/components/common/icon';
 import SurveyButton from '@/components/survey/SurveyButton';
-import { QUESTIONS } from '@/stores/SurveyStore';
+import useSurveyStore, { QUESTIONS } from '@/stores/SurveyStore';
 import { useNavigate } from 'react-router-dom';
 
 interface SurveyCardHeaderProps {
@@ -8,9 +8,14 @@ interface SurveyCardHeaderProps {
 }
 const SurveyCardHeader = ({ progress }: SurveyCardHeaderProps) => {
   const navigate = useNavigate();
+  const surveyStore = useSurveyStore();
+  const handleBack = () => {
+    navigate(-1);
+    surveyStore.resetProgress();
+  };
   return (
     <div className="flex items-start justify-between">
-      <div className="group flex cursor-pointer items-center space-x-2" onClick={() => navigate(-1)}>
+      <div className="group flex cursor-pointer items-center space-x-2" onClick={handleBack}>
         <IconButton>
           <Backspace className="group-hover:stroke-blue-light" />
         </IconButton>
