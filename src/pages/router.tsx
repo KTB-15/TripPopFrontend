@@ -6,6 +6,7 @@ import RootPage from '@/pages/RootPage';
 import MainPage from '@/pages/MainPage';
 import LoginPage from '@/pages/LoginPage';
 import SurveyPage from '@/pages/SurveyPage';
+import PlaceDetailPage from '@/pages/PlaceDetailPage';
 
 const myPageRoutes: RouteObject[] = [
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <MainPage />,
+      },
+      {
+        path: '/detail/:id',
+        element: <PlaceDetailPage />,
       },
       ...myPageRoutes,
     ],
