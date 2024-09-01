@@ -43,11 +43,7 @@ const SurveyCardFooter = () => {
   const isLastQuestion = progress === QUESTIONS.length - 1;
   return (
     <div className="flex w-full items-center justify-between space-y-1">
-      <BaseButton
-        buttonName="뒤로가기"
-        onClick={handlePrev}
-        className="base-btn bg-blue-survey-btn hover:bg-blue-dark"
-      />
+      <BaseButton buttonName="뒤로가기" onClick={handlePrev} className="base-btn bg-blue-light hover:bg-blue-dark" />
       <div className="flex items-center justify-center space-x-5">
         <BaseButton
           buttonName="건너뛰기"
@@ -57,7 +53,7 @@ const SurveyCardFooter = () => {
         <BaseButton
           buttonName={isPending ? '등록 중...' : isLastQuestion ? '완료' : '다음'}
           onClick={handleNext}
-          className="base-btn bg-blue-survey-btn hover:bg-blue-dark"
+          className="base-btn bg-blue-light hover:bg-blue-dark"
         />
       </div>
     </div>
