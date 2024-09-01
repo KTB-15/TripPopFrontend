@@ -27,7 +27,7 @@ const PlaceDetailCard = () => {
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzk92qOx7c5k5fybjVbUkwg6BGW_ptjgID9A&s"
           alt="여행 카드 이미지"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover hover:animate-zoom-in"
         />
       </div>
       <CardBody />

@@ -2,7 +2,7 @@ import { PlaceDetailCard } from '@/components/place/card';
 
 const PlaceDetailSection = () => {
   return (
-    <section className="mb-4 flex h-full items-center justify-center sm:mb-0 sm:mr-4 sm:w-1/2 lg:w-2/5">
+    <section className="flex h-full items-center justify-center sm:mr-3 sm:w-1/2 lg:w-2/5">
       <PlaceDetailCard />
     </section>
   );
