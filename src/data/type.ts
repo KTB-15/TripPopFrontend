@@ -18,7 +18,7 @@ export interface RecommendedPlaceRes {
 export interface SurveyReq {
   travelStyle1: number;
   travelStyle2: number;
-  travelStyle3: number;
+  // travelStyle3: number; // 미사용
   travelStyle4: number;
   travelStyle5: number;
   travelStyle6: number;

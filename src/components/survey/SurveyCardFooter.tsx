@@ -8,12 +8,14 @@ const SurveyCardFooter = () => {
   const { progress, choices, incProgress, decProgress, resetProgress } = useSurveyStore();
   const navigate = useNavigate();
   const surveyReq: SurveyReq = choices.reduce((acc, value, idx) => {
-    const key = `travelStyle${idx + 1}` as keyof SurveyReq;
+    let key: keyof SurveyReq;
+    key = `travelStyle${idx < 2 ? idx + 1 : idx + 2}` as keyof SurveyReq; // travelStyle3 제외
     acc[key] = value;
     return acc;
   }, {} as SurveyReq);
   const { mutate, isPending } = useApiMutate<unknown, SurveyReq>(
     {
+      // TODO: 사용자 ID 적용
       url: '/member/survey/TODO',
       method: 'PATCH',
       body: surveyReq,

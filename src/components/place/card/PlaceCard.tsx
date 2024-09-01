@@ -50,7 +50,7 @@ const PlaceCard = ({ place }: { place: PlaceRes }) => {
     <div className="group flex w-[22rem] min-w-[10%] flex-col overflow-hidden rounded-lg bg-white shadow-md hover:shadow-blue-light/50 sm:w-full">
       <div className="overflow-hidden">
         <img
-          className="h-60 w-full object-fill hover:animate-zoom-in"
+          className="h-60 w-full object-fill group-hover:animate-zoom-in"
           src={`data:image/jpeg;base64,${place.image}`}
           alt="Travel Destination"
         />
