@@ -1,4 +1,4 @@
-import { IconButton, Option } from '@/components/common/icon';
+import { Edit, IconButton, Option } from '@/components/common/icon';
 import { UserInfoCardContainer, UserInfoContainer, UserInfoHeader } from '@/components/userinfo';
 import { UserInfoCard } from '@/components/userinfo/card';
 
@@ -9,9 +9,14 @@ const UserFavouritePage = () => {
       <UserInfoCardContainer>
         <UserInfoCard
           options={
-            <IconButton rounded={true}>
-              <Option />
-            </IconButton>
+            <>
+              <IconButton rounded={true}>
+                <Edit />
+              </IconButton>
+              <IconButton rounded={true}>
+                <Option />
+              </IconButton>
+            </>
           }
         />
       </UserInfoCardContainer>
