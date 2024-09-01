@@ -6,7 +6,7 @@ const StarSVG = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-6 stroke-yellow">
+      className="size-7 stroke-yellow">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
