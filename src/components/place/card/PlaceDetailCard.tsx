@@ -1,13 +1,17 @@
 import { Hashtag } from '@/components/common';
-import { Favourite, Bookmark, Star } from '@/components/common/icon';
+import { Favourite, Bookmark, Star, IconButton } from '@/components/common/icon';
 
 const CardBody = () => (
   <div className="space-y-2 p-4">
     <div className="flex items-center justify-between">
       <h2 className="text-3xl font-bold">여행지 이름</h2>
       <div className="flex items-center space-x-2">
-        <Favourite />
-        <Bookmark />
+        <IconButton>
+          <Favourite />
+        </IconButton>
+        <IconButton>
+          <Bookmark />
+        </IconButton>
         <div className="flex items-center">
           <Star />
           <span className="ml-1">4.6 / 5</span>
