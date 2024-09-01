@@ -14,7 +14,7 @@ const CardBody = () => (
         </IconButton>
         <div className="flex items-center">
           <Star />
-          <span className="ml-1">4.6 / 5</span>
+          <span className="ml-1">4 / 5</span>
         </div>
       </div>
     </div>
