@@ -1,9 +1,6 @@
 import MyPageHeader from '@/components/userinfo/Header';
 import UserInfoContainer from '@/components/userinfo/UserInfoContainer';
-import InfoSection from '@/components/userinfo/card/InfoSection';
-import PlaceImage from '@/components/userinfo/card/PlaceImage';
-import PlaceInfo from '@/components/userinfo/card/PlaceInfo';
-import UserInfoCard from '@/components/userinfo/card/UserInfoCard';
+import { InfoSection, PlaceImage, PlaceInfo, UserInfoCard } from '@/components/userinfo/card';
 
 const UserFavouritePage = () => {
   return (
