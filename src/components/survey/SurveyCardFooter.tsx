@@ -1,4 +1,4 @@
-import SurveyButton from '@/components/survey/SurveyButton';
+import BaseButton from '@/components/common/BaseButton';
 import { SurveyReq } from '@/data/type';
 import { useApiMutate } from '@/hooks/useApi';
 import useSurveyStore, { QUESTIONS } from '@/stores/SurveyStore';
@@ -43,18 +43,18 @@ const SurveyCardFooter = () => {
   const isLastQuestion = progress === QUESTIONS.length - 1;
   return (
     <div className="flex w-full items-center justify-between space-y-1">
-      <SurveyButton
+      <BaseButton
         buttonName="뒤로가기"
         onClick={handlePrev}
         className="survey-btn bg-blue-survey-btn hover:bg-blue-dark"
       />
       <div className="flex items-center justify-center space-x-5">
-        <SurveyButton
+        <BaseButton
           buttonName="건너뛰기"
           onClick={handleSkip}
           className="survey-btn bg-cancel text-black hover:bg-gray-400"
         />
-        <SurveyButton
+        <BaseButton
           buttonName={isPending ? '등록 중...' : isLastQuestion ? '완료' : '다음'}
           onClick={handleNext}
           className="survey-btn bg-blue-survey-btn hover:bg-blue-dark"
