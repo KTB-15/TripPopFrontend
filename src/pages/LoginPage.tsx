@@ -11,14 +11,20 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
 
   const loginMutation = useLogin();
-
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
-    loginMutation.mutate({ memberId, password }, {
-      onSuccess: () => {
-        navigate('/');
+    loginMutation.mutate(
+      { memberId, password },
+      {
+        onSuccess: () => {
+          navigate('/');
+        },
+        onError: (error: Error) => {
+          console.error('로그인 실패:', error.message);
+          alert('로그인에 실패했습니다. 다시 시도해주세요.');
+        }
       }
-    });
+    );
   };
 
   return (
