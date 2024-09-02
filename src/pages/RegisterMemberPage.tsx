@@ -190,7 +190,7 @@ const RegisterMemberPage: React.FC = () => {
               className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm">
               <option value="">성별을 선택하세요</option>
               <option value="MALE">남성</option>
-              <option value="FEc">여성</option>
+              <option value="FEMALE">여성</option>
             </select>
           </section>
 
