@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '@/stores/RegisterPageStore';
+import { useLogin } from '@/hooks/useLogin';
 import RegisterMemberPage from '@/pages/RegisterMemberPage';
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { openModal } = useStore();
+  const [memberId, setMemberId] = useState('');
+  const [password, setPassword] = useState('');
 
+  const loginMutation = useLogin();
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
-    // 로그인 성공 시 '/' 페이지로 리다이렉션
-    navigate('/');
+    loginMutation.mutate(
+      { memberId, password },
+      {
+        onSuccess: () => {
+          navigate('/');
+        },
+        onError: (error: Error) => {
+          console.error('로그인 실패:', error.message);
+          alert('로그인에 실패했습니다. 다시 시도해주세요.');
+        }
+      }
+    );
   };
 
   return (
@@ -44,6 +58,8 @@ const LoginPage = () => {
               <input
                 type="text"
                 id="id"
+                value={memberId}
+                onChange={(e) => setMemberId(e.target.value)}
                 className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                 placeholder=""
               />
@@ -55,6 +71,8 @@ const LoginPage = () => {
               <input
                 type="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="block w-2/3 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                 placeholder=""
               />

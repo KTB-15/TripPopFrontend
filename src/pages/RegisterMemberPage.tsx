@@ -6,7 +6,7 @@ import { FormData } from '@/stores/RegisterPageStore';
 
 // member 등록 API 함수
 const registerMember = async (formData: FormData) => {
-  const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/member/join`, {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/member/join`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ const registerMember = async (formData: FormData) => {
 
 // 중복확인 API 함수
 const checkIdDuplicate = async (id: string) => {
-  const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/member/exists/${id}`);
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/member/exists/${id}`);
 
   if (!response.ok) {
     throw new Error('아이디 중복 확인에 실패했습니다.');
