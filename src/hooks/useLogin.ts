@@ -13,8 +13,7 @@ export const useLogin = () => {
     {
       onError: (error: Error) => {
         console.error('로그인 실패:', error.message);
-        // 여기에서 에러를 UI로 전달할 수 있습니다.
-        // 예: toast나 modal을 통해 사용자에게 에러 메시지 표시
+        alert('아이디, 비밀번호를 확인해주세요.');
       },
       onSuccess: (data: LoginResponse) => {
         console.log('로그인 성공:', data);
