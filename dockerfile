@@ -4,4 +4,4 @@ COPY package.json yarn.lock ./
 RUN yarn install
 COPY . ./
 RUN yarn build
-CMD ["yarn", "dev", "--host", "--port", "80"]
+CMD ["yarn", "dev", "--host", "--port", "5173"]
