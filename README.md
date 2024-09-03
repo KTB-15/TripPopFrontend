@@ -31,4 +31,4 @@ export default {
 
 
 testtest
-CD test
+CD testdd
