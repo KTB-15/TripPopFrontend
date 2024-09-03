@@ -14,6 +14,7 @@ const CardActionSection = ({ place }: { place: RecommendedPlaceRes }) => {
     {
       url: '/favourite/toggle',
       method: 'POST',
+      body: { placeId: place.placeId, isFavourite: place.isFavourite },
     },
     {
       onSuccess: () => {
