@@ -22,6 +22,11 @@ const fetcher = async <RES, REQ = unknown>({
   accessToken,
   refreshToken,
 }: RequestProps<REQ> & { accessToken: string | null; refreshToken: string | null }): Promise<RES> => {
+  if (accessToken == null && refreshToken == null) {
+    window.location.href = '/login';
+    throw new Error('Session expired. Please log in again.');
+  }
+
   const response = await fetch(`${API_URL}${url}`, {
     ...options,
     method,
