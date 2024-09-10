@@ -27,6 +27,10 @@ const LoginPage = () => {
     );
   };
 
+  const onKakaoLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/kakao"
+  }
+
   const onGoogleLogin = () => {
     window.location.href = "http://localhost:8080/oauth2/authorization/google"
   }
@@ -114,7 +118,7 @@ const LoginPage = () => {
             </section>
 
             <section className="mt-4 flex justify-between px-4">
-              <img src="/kakao_login_logo.png" alt="Kakao Login" className="h-12 cursor-pointer" />
+              <img src="/kakao_login_logo.png" onClick={onKakaoLogin} alt="Kakao Login" className="h-12 cursor-pointer" />
 
               <img src="/google_login_logo.png" onClick={onGoogleLogin} alt="Google Login" className="h-12 cursor-pointer" />
 
