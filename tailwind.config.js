@@ -26,6 +26,9 @@ export default {
       fontFamily: {
         goorm: ['goorm-sans', 'sans-serif'],
       },
+      boxShadow: {
+        card: '4px 4px 4px rgba(0,0,0,0.3)',
+      },
     },
   },
   plugins: [],
