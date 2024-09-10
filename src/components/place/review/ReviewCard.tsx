@@ -27,7 +27,7 @@ const ReviewContent = () => {
 
 const ReviewCard = ({ rating }: { rating: number }) => {
   return (
-    <div className="flex rounded-lg p-4 shadow-md">
+    <div className="shadow-card flex rounded-lg p-4">
       <ReviewInfoSection rating={rating} />
       <ReviewContent />
     </div>

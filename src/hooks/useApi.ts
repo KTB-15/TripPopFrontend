@@ -93,6 +93,7 @@ export const useApiQuery = <RES, REQ = unknown, TData = RES>(
   return useQuery<RES, Error, TData>({
     queryKey: Array.isArray(key) ? key : [key],
     queryFn: () => fetcher<RES, REQ>({ url, method, body, accessToken, refreshToken }),
+    retry: 1,
     ...options,
   });
 };
@@ -114,6 +115,7 @@ export const useApiMutate = <RES, REQ = unknown>(
         accessToken,
         refreshToken,
       }),
+    retry: 1,
     ...options,
   });
 };
