@@ -27,6 +27,10 @@ const LoginPage = () => {
     );
   };
 
+  const onGoogleLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/google"
+  }
+
   return (
     <main className="flex min-h-screen bg-gray-100">
       {/* 왼쪽 40% 영역 */}
@@ -108,7 +112,7 @@ const LoginPage = () => {
             <section className="mt-4 flex justify-between px-4">
               <img src="/kakao_login_logo.png" alt="Kakao Login" className="h-12 cursor-pointer" />
 
-              <img src="/google_login_logo.png" alt="Google Login" className="h-12 cursor-pointer" />
+              <img src="/google_login_logo.png" onClick={onGoogleLogin} alt="Google Login" className="h-12 cursor-pointer" />
 
               <img src="/naver_login_logo.png" alt="Naver Login" className="h-12 cursor-pointer" />
             </section>
