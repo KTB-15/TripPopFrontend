@@ -7,6 +7,7 @@ import MainPage from '@/pages/MainPage';
 import LoginPage from '@/pages/LoginPage';
 import SurveyPage from '@/pages/SurveyPage';
 import PlaceDetailPage from '@/pages/PlaceDetailPage';
+import TokenProvider from './TokenProvider';
 
 const myPageRoutes: RouteObject[] = [
   {
@@ -21,6 +22,10 @@ const myPageRoutes: RouteObject[] = [
     path: 'mypage/history',
     element: <UserHistoryPage></UserHistoryPage>,
   },
+  {
+    path: 'jwt-token',
+    element: <TokenProvider></TokenProvider>
+  }
 ];
 
 const router = createBrowserRouter([
