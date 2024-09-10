@@ -31,6 +31,10 @@ const LoginPage = () => {
     window.location.href = "http://localhost:8080/oauth2/authorization/google"
   }
 
+  const onNaverLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/naver"
+  }
+
   return (
     <main className="flex min-h-screen bg-gray-100">
       {/* 왼쪽 40% 영역 */}
@@ -114,7 +118,7 @@ const LoginPage = () => {
 
               <img src="/google_login_logo.png" onClick={onGoogleLogin} alt="Google Login" className="h-12 cursor-pointer" />
 
-              <img src="/naver_login_logo.png" alt="Naver Login" className="h-12 cursor-pointer" />
+              <img src="/naver_login_logo.png" onClick={onNaverLogin} alt="Naver Login" className="h-12 cursor-pointer" />
             </section>
           </form>
         </section>
