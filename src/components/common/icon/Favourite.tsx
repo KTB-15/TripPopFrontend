@@ -1,4 +1,6 @@
-const FavouriteSVG = () => {
+import { SVGProps } from 'react';
+
+const FavouriteSVG = (props: SVGProps<SVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +8,7 @@ const FavouriteSVG = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke={'currentColor'}
-      className="size-7 stroke-red hover:fill-red">
+      className={`size-7 stroke-red hover:fill-red ${props.className}`}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -5,14 +5,15 @@ export interface RecommendedPlaceReq {
   places: number[];
 }
 
-export interface PlaceRes {
+export interface RecommendedPlaceRes {
   placeId: number;
-  image: string; // base64
+  placeImage: string; // base64
+  areaName: string;
+  roadName: string;
+  isFavourite: boolean;
 }
 
-export interface RecommendedPlaceRes {
-  places: PlaceRes[];
-}
+export type FavouriteToggleReq = Pick<RecommendedPlaceRes, 'placeId' | 'isFavourite'>;
 
 // 설문지
 export interface SurveyReq {
