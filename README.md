@@ -11,15 +11,10 @@
 
 
 
-> 한 사람을 위해 마음을 전달하는 온라인 롤링페이퍼! 👉 https://rollingpaper.site/
+> 맞춤형 여행지 추천 서비스 TripPop
 
-(↑프로젝트 한 줄 설명 : 설명을 장황하게 작성하는 것보다 한 줄로 어떤 프로젝트인지 설명하는 것이 훨씬 직관적이다.)
+<img width="1692" alt="스크린샷 2024-09-23 오전 10 21 36" src="https://github.com/user-attachments/assets/312afcc3-4bfd-4c26-862e-f738d3518c9b">
 
-
-
-![](https://user-images.githubusercontent.com/38487811/90950455-85d36700-e48c-11ea-9b79-72b5dcb6c6d6.png)
-
-(↑프로젝트를 대표하는 대표 이미지)
 
 
 ## 📖 Description
