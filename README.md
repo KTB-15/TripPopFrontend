@@ -26,7 +26,7 @@
 <p float="left">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 25 42" src="https://github.com/user-attachments/assets/72686edd-7a89-434b-b69b-5d6e5be9325e">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 26 22" src="https://github.com/user-attachments/assets/4a255e9a-8cf8-4b06-8d49-ab30637d55bf">
-    <img width="200" alt="스크린샷 2024-09-23 오전 10 31 58" src="https://github.com/user-attachments/assets/db616bdc-adcb-4f4e-8f4c-421d6a0f2e17">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 33 01" src="https://github.com/user-attachments/assets/6ac6f0ac-4621-4970-b52f-710c4ed715e4">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 29 25" src="https://github.com/user-attachments/assets/08b287fd-5270-41b8-ad2e-83edcec75f38">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 28 21" src="https://github.com/user-attachments/assets/150b2122-1a6b-4e98-bab8-185d16be4055">
 </p>
