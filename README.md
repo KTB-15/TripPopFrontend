@@ -32,10 +32,11 @@
 </p>
 
 ## ⭐ Main Feature
-### 정기 결제 기능
-- 아임포트(Iamport)를 이용한 정기 결제 기능 구현
+### 회원가입 및 로그인
+- base 로그인, OAuth2 로그인
+- JWT 이용
 
-### 회원가입 및 로그인 
+### 여행지 추천
 - JWT 이용
 
 ### 기타 기능
@@ -43,7 +44,6 @@
 - 마이페이지
 
 ## 💻 Getting Started
-(↑해당 프로젝트 설치 및 실행 방법)
 
 ### Installation
 ```
@@ -55,11 +55,10 @@ yarn dev
 ```
 
 ## 🔧 Stack
-- **Language**: JavaScript
-- **Library & Framework** : Node.js
-- **Database** : AWS RDS (MariaDB)
-- **ORM** : Sequelize
-- **Deploy**: AWS EC2
+- **Language**: TypeScript
+- **Library & Framework** : React.js + Vite
+- **Status Management** : Zustand
+- **CSS** : Tailwindcss
 
 ## :open_file_folder: Project Structure
 
