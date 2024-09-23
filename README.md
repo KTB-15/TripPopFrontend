@@ -1,4 +1,4 @@
-<img width="1482" alt="스크린샷 2024-09-23 오전 10 25 26" src="https://github.com/user-attachments/assets/902468b8-9234-4186-8dc8-e8c7c0ac4384">
+<img width="1389" alt="스크린샷 2024-09-23 오전 10 36 36" src="https://github.com/user-attachments/assets/03b8e0f3-8a9b-451d-aaec-7aba8bdadd4a"><img width="1482" alt="스크린샷 2024-09-23 오전 10 25 26" src="https://github.com/user-attachments/assets/902468b8-9234-4186-8dc8-e8c7c0ac4384">
 # TripPop 🌏
 
 
@@ -26,9 +26,9 @@
 <p float="left">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 25 42" src="https://github.com/user-attachments/assets/72686edd-7a89-434b-b69b-5d6e5be9325e">
     <img width="200" alt="스크린샷 2024-09-23 오전 10 26 22" src="https://github.com/user-attachments/assets/4a255e9a-8cf8-4b06-8d49-ab30637d55bf">
-    <img width="200" alt="스크린샷 2024-09-23 오전 10 33 01" src="https://github.com/user-attachments/assets/6ac6f0ac-4621-4970-b52f-710c4ed715e4">
-    <img width="200" alt="스크린샷 2024-09-23 오전 10 29 25" src="https://github.com/user-attachments/assets/08b287fd-5270-41b8-ad2e-83edcec75f38">
-    <img width="200" alt="스크린샷 2024-09-23 오전 10 28 21" src="https://github.com/user-attachments/assets/150b2122-1a6b-4e98-bab8-185d16be4055">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 34 26" src="https://github.com/user-attachments/assets/1601ec17-6c65-4118-8458-601ad0388571">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 36 36" src="https://github.com/user-attachments/assets/b6a20884-7506-43c8-a3ca-1917b3de6c67">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 36 46" src="https://github.com/user-attachments/assets/1fc43755-be0e-4568-996c-2e7dd7b4931a">
 </p>
 
 ## ⭐ Main Feature
