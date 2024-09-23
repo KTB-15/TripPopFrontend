@@ -1,4 +1,4 @@
-
+<img width="1482" alt="스크린샷 2024-09-23 오전 10 25 26" src="https://github.com/user-attachments/assets/902468b8-9234-4186-8dc8-e8c7c0ac4384">
 # TripPop 🌏
 
 
@@ -16,7 +16,6 @@
 <img width="1692" alt="스크린샷 2024-09-23 오전 10 21 36" src="https://github.com/user-attachments/assets/312afcc3-4bfd-4c26-862e-f738d3518c9b">
 
 
-
 ## 📖 Description
 
 여행을 가고싶지만 여행지를 고르지 못한 미래의 여행자에게 맞춤형 여행지를 추천합니다.
@@ -24,13 +23,12 @@
 나이, 성별, 본인의 취향을 입력하고 맞는 여행지를 추천받으세요!
 
 ## :baby_chick: Demo
-(↑해당 프로젝트가 실제 배포되고 있지 않아서, 이미지로 프로젝트의 뷰를 대체할 경우)
 <p float="left">
-    <img src="https://lh3.googleusercontent.com/iYHEwh2_Q6nIKS67eItV4AwIokeJDNe0ojtpWGqKpRyhaRlmCSmBcnkFNCmXbTkajKA=w2560-h1330-rw" width=200 />
-    <img src="https://lh3.googleusercontent.com/xl0sqT6Jz1p9Gq9slw4VXRr-akf4v74b_k3QkZUMZPvYV37-e5LqTZcOjofof4Xyl48=w2560-h1330-rw" width=200 />
-    <img src="https://lh3.googleusercontent.com/JqUUXWSgU0bhSBpOObERLvfUGE3eBnInmYvDMY3S2aAatyeFKLOifWnBLgZ0KLGbmA=w2560-h1330-rw" width=200 />
-    <img src="https://lh3.googleusercontent.com/AdN5fkguQMSc4M6iVkAFONsuxZhOQaKE7TDzuhF56FgDLORAnBv8160W7vva4a6kFBg=w2560-h1330-rw" width=200 />
-    <img src="https://lh3.googleusercontent.com/ruDvvtKehqGB_4PX7QBsUY2RLDe_v6g5FL-_XmC6SUGjKUQqa08Uy-DtsNi8wYuuXU4=w2560-h1330-rw" width=200 />
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 25 42" src="https://github.com/user-attachments/assets/72686edd-7a89-434b-b69b-5d6e5be9325e">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 26 22" src="https://github.com/user-attachments/assets/4a255e9a-8cf8-4b06-8d49-ab30637d55bf">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 31 58" src="https://github.com/user-attachments/assets/db616bdc-adcb-4f4e-8f4c-421d6a0f2e17">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 29 25" src="https://github.com/user-attachments/assets/08b287fd-5270-41b8-ad2e-83edcec75f38">
+    <img width="200" alt="스크린샷 2024-09-23 오전 10 28 21" src="https://github.com/user-attachments/assets/150b2122-1a6b-4e98-bab8-185d16be4055">
 </p>
 
 ## ⭐ Main Feature
