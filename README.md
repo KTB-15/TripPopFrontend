@@ -64,19 +64,25 @@ yarn dev
 
 ```markdown
 src
-├── common
-│   ├── config
-│   ├── types
-│   └── utils
-│       ├── types
-│       └── utils
-├── controller
-├── entity
-├── infrastructure
-│   ├── express
-│   └── typeorm
-├── repository
-└── ser
+├── api
+├── assets
+│   ├── font
+├── components
+│   ├── common
+│       └── icon
+│   ├── layout
+│       └── header
+│   ├── place
+│       ├── card
+│       └── review
+│   ├── survey
+│   └── userinfo
+│       └── card
+├── data
+├── hooks
+├── pages
+│   └── userinfo
+└── stores
 ```
 
 ## 🔨 Server Architecture
