@@ -1,4 +1,4 @@
-<img width="1389" alt="스크린샷 2024-09-23 오전 10 36 36" src="https://github.com/user-attachments/assets/03b8e0f3-8a9b-451d-aaec-7aba8bdadd4a"><img width="1482" alt="스크린샷 2024-09-23 오전 10 25 26" src="https://github.com/user-attachments/assets/902468b8-9234-4186-8dc8-e8c7c0ac4384">
+
 # TripPop 🌏
 
 
