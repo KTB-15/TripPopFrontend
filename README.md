@@ -67,7 +67,7 @@ yarn dev
 src
 ├── api
 ├── assets
-│   ├── font
+│   └── font
 ├── components
 │   ├── common
 │       └── icon
