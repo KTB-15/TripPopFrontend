@@ -18,7 +18,7 @@
 
 ## 📖 Description
 
-여행을 가고싶지만 여행지를 고르지 못한 미래의 여행자에게 맞춤형 여행지를 추천합니다.
+여행을 가고싶지만 여행지를 고르지 못한 미래의 여행자에게 **AI가 맞춤형 여행지**를 추천합니다.
 
 나이, 성별, 본인의 취향을 입력하고 맞는 여행지를 추천받으세요!
 
@@ -37,15 +37,16 @@
 - base 로그인, OAuth2 로그인
 - JWT 이용
 
-### 추가 작성
-- 추가 작성
+### 이미지 응답
+- **Google API**를 활용하여 AI가 추천해준 장소에 대한 이미지 응답
+- 즐겨찾기
 
 
 ## 💻 Getting Started
 
 ### Installation
 ```
-yarn install
+yarn
 ```
 ### Develop Mode
 ```
@@ -84,14 +85,18 @@ src
 ```
 
 ## 🔨 Improvement (공통 API 처리)
+Fetch API와 React Query를 활용하여 공통 API 훅(useApi)을 만들었습니다.
+<img width="600" alt="trippop-api" src="https://github.com/user-attachments/assets/9e59199a-e171-4c7d-8073-b6154211b214">
+
+
+`useApiQuery`와 `useApiMutate`를 만들어, 리액트 쿼리의 기능과 Fetch API에서 공통적인 설정 정보를 모두 관리하도록하여, 유지보수가 쉽도록 설계했습니다.
+
 <p float="left">
     <img width="500" alt="스크린샷 2024-09-23 오전 10 59 48" src="https://github.com/user-attachments/assets/488254fb-e044-49b5-81dc-16f03276e0ce">
     <img width="500" alt="스크린샷 2024-09-23 오전 11 00 14" src="https://github.com/user-attachments/assets/e8e66345-eaa0-486b-8177-031a0f61a674">
 </p>
 
-**etc**
 
-- PR을 통한 코드 개선
 
 ## 👨‍👩‍👧‍👦 Developer
 *  **한신** ([Urchinode](https://github.com/Urchinode))
